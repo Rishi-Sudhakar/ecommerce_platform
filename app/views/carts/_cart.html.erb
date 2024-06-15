@@ -1,0 +1,10 @@
+<!-- app/views/carts/_cart.html.erb -->
+<h2>Cart</h2>
+<ul class="list-group">
+  <% @cart.line_items.each do |item| %>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <%= item.product.name %>
+      <span class="badge badge-primary badge-pill"><%= item.quantity %></span>
+    </li>
+  <% end %>
+</ul>

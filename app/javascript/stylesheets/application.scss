@@ -1,0 +1,23 @@
+@import "~bootstrap/scss/bootstrap";
+
+// Custom styles
+body {
+  background-color: #f8f9fa;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.add-to-cart.btn-success {
+  animation: success-animation 0.5s forwards;
+}
+
+@keyframes success-animation {
+  0% { background-color: #28a745; }
+  100% { background-color: #007bff; }
+}

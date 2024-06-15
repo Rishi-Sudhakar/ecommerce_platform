@@ -1,0 +1,22 @@
+<!-- app/views/products/index.html.erb -->
+<div class="container mt-5">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text"><%= product.description %></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary add-to-cart" data-url="<%= add_to_cart_path(product_id: product.id) %>">Add to Cart</button>
+              </div>
+              <small class="text-muted"><%= number_to_currency(product.price) %></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div id="cart" class="mt-5"></div>
+</div>
